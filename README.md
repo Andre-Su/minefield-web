@@ -2,6 +2,8 @@
 
 Um simples jogo de Campo Minado desenvolvido para web, com interface responsiva e tema adaptável ao modo claro/escuro.
 
+Disponível em [Minefield](https://github.com/Andre-Su/minefield-web)
+
 ## Funcionalidades
 
 - Interface responsiva, com cores baseado no Material Design 3.
