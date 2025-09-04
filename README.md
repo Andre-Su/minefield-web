@@ -4,17 +4,17 @@ Um simples jogo de Campo Minado desenvolvido para web, com interface responsiva 
 
 ## Funcionalidades
 
-- Interface moderna e responsiva, baseada em Material Design.
+- Interface responsiva, com cores baseado no Material Design 3.
 - Suporte a temas claro e escuro, alternando automaticamente conforme o sistema.
 - Fonte monoespaçada personalizada ([Ubuntu Mono](root/static/fonts/Ubuntu_Mono/UFL.txt)).
-- Estrutura pronta para lógica de jogo em JavaScript.
+- Estrutura pronta para lógica de jogo em JavaScript. **EM CONSTRUÇÃO**
 - Layout adaptável para dispositivos móveis.
 
 ## Estrutura do Projeto
 
 ```markdown
 minefield/
-├── root/
+├── public/
 │   ├── index.html                # Página principal do jogo
 │   ├── static/
 │   │   ├── css/
@@ -36,6 +36,7 @@ minefield/
 ## Como rodar localmente
 
 1. **Clone o repositório:**
+   Requer Git.
 
    ```sh
    git clone https://github.com/Andre-Su/minefield.git
@@ -65,4 +66,4 @@ minefield/
 
 ---
 
-Desenvolvido por [André Augusto](https://github.com/Andre-Su/)
+&copy; André Augusto, 2025 | Desenvolvido por [André Augusto](https://github.com/Andre-Su/)
