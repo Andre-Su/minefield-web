@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/theme.css">
+    <script src="static/js/game_logic.js" defer></script>
+    <title>TTT</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1 id="title">
+                <a href="/">
+                    Campo Minado
+                </a>
+            </h1>
+        </nav>
+    </header>
+    <main>
+        <section class="app-container">
+            <div class="app-header">
+    
+                <ul class="app-menu">
+                    <li class="text-bar" id="message">Clique para iniciar</li>
+                    <div>
+                        <button id="start">Começar</button>
+                        <button hidden id="restart">Reiniciar</button>
+                    </div>
+                </ul>
+            </div>
+            <div id="game-grid">
+                <span class="tile" id="tile-0-0"></span>
+                <span class="tile" id="tile-1-0"></span>
+                <span class="tile" id="tile-2-0"></span>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>
+            &copy; André Augusto, 2025 | <a href="http://github.com/Andre-Su">Andre-Su</a><br>
+        </p>
+    </footer>
+</body>
+</html>
