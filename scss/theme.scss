@@ -15,10 +15,12 @@ sass -w ./scss/theme.scss ./root/static/css/theme.css
     --mono-font: 'Ubuntu-Mono';
     color-scheme: light;
     @include variables.colors();
+    --transparency: 1;
 
     @media (prefers-color-scheme: dark) {
         color-scheme: dark;
         @include variables.colors-dark();
+        --transparency: 0.85;
     }
 }
 
@@ -31,6 +33,11 @@ html {
     body {
         width: 100%;
         height: 100%;
+
+        img,
+        video {
+            opacity: var(--transparency);
+        }
 
         header {
 
