@@ -1,0 +1,10 @@
+{
+    "name":"Minefield",
+    "short_name":"Mines",
+    "icons":[
+    ],
+    "theme_color":"#725188",
+    "background_color":"#725188",
+    "display":"standalone",
+    "lang":"pt-br"
+}
