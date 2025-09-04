@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* For local compilation: 
 sass -w ./scss/theme.scss ./root/static/css/theme.css
 */
@@ -8,7 +9,7 @@ sass -w ./scss/theme.scss ./root/static/css/theme.css
   font-style: normal;
 }
 :root {
-  --mono-font: "Ubuntu-Mono";
+  --mono-font: "Ubuntu Mono";
   color-scheme: light;
   --md-sys-color-primary: rgb(114 81 136);
   --md-sys-color-surface-tint: rgb(114 81 136);
@@ -116,20 +117,120 @@ sass -w ./scss/theme.scss ./root/static/css/theme.css
     --transparency: 0.85;
   }
 }
+:root img,
+:root video {
+  opacity: var(--transparency);
+}
 
 html {
-  margin: 0;
-  padding: 0;
   width: 100vw;
   height: 100vh;
+  background-color: var(--md-sys-color-background);
 }
 html body {
   width: 100%;
   height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--md-sys-color-background);
+  font-family: "Ubuntu Mono";
+  color: var(--md-sys-color-on-background);
+  font-size: 1.15rem;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  transition-duration: 500ms;
+  /* Formatar Títulos */
 }
-html body img,
-html body video {
-  opacity: var(--transparency);
+html body h1 {
+  font-size: 3rem;
+  margin-top: 3rem;
+}
+@media only screen and (max-width: 720px) {
+  html body h1 {
+    font-size: 2.5rem;
+  }
+}
+html body h2 {
+  font-size: 2.6rem;
+  margin-top: 3rem;
+}
+@media only screen and (max-width: 720px) {
+  html body h2 {
+    font-size: 2.1rem;
+  }
+}
+html body h3 {
+  font-size: 2rem;
+  margin-top: 3rem;
+}
+@media only screen and (max-width: 720px) {
+  html body h3 {
+    font-size: 1.75rem;
+  }
+}
+html body h4 {
+  font-size: 1.44rem;
+}
+@media only screen and (max-width: 720px) {
+  html body h4 {
+    font-size: 1.25rem;
+  }
+}
+html body h5 {
+  font-size: 1.15rem;
+}
+html body h6 {
+  font-size: 0.96rem;
+}
+html body h1,
+html body h2,
+html body h3 {
+  margin: 0 0 10px 5px;
+  line-height: 1.1;
+}
+html body p {
+  margin: 1.5rem 0;
+}
+html body p, html body h1, html body h2, html body h3, html body h4, html body h5, html body h6 {
+  overflow-wrap: break-word;
+}
+html body header {
+  width: 100%;
+  min-height: 10vh;
+  background-color: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+}
+html body header nav {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+html body header nav h1 {
+  margin: 0;
+}
+html body header nav h1 a {
+  text-decoration: none;
+}
+html body header nav h1 a:hover {
+  text-decoration: underline;
+}
+html body main {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+html body footer {
+  min-height: 10vh;
+  background-color: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+html body footer p {
+  margin: 5px 0;
 }
 
 /*# sourceMappingURL=theme.css.map */

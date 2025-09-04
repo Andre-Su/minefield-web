@@ -12,7 +12,7 @@ sass -w ./scss/theme.scss ./root/static/css/theme.css
 }
 
 :root {
-    --mono-font: 'Ubuntu-Mono';
+    --mono-font: 'Ubuntu Mono';
     color-scheme: light;
     @include variables.colors();
     --transparency: 1;
@@ -22,29 +22,128 @@ sass -w ./scss/theme.scss ./root/static/css/theme.css
         @include variables.colors-dark();
         --transparency: 0.85;
     }
+
+    img,
+    video {
+        opacity: var(--transparency);
+    }
 }
 
 html {
-    margin: 0;
-    padding: 0;
     width: 100vw;
     height: 100vh;
-
+    background-color: var(--md-sys-color-background);
+    
     body {
         width: 100%;
         height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: var(--md-sys-color-background);
+        font-family: 'Ubuntu Mono';
+        color: var(--md-sys-color-on-background);
+        font-size: 1.15rem;
+        line-height: 1.5;
+        display: flex;
+        flex-direction: column;
+        transition-duration: 500ms;
 
-        img,
-        video {
-            opacity: var(--transparency);
+        /* Formatar Títulos */
+        h1 {
+            font-size: 3rem;
+            margin-top: 3rem;
+            @media only screen and (max-width: 720px) {
+                font-size: 2.5rem;
+            }
+        }
+        
+        h2 {
+            font-size: 2.6rem;
+            margin-top: 3rem;
+            @media only screen and (max-width: 720px) {
+                font-size: 2.1rem;
+            }
+        }
+        
+        h3 {
+            font-size: 2rem;
+            margin-top: 3rem;
+            @media only screen and (max-width: 720px) {
+                font-size: 1.75rem;
+            }
+        }
+        
+        h4 {
+            font-size: 1.44rem;
+            @media only screen and (max-width: 720px) {
+                font-size: 1.25rem;
+            }
+        }
+
+        h5 {
+        font-size: 1.15rem;
+        }
+
+        h6 {
+        font-size: 0.96rem;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            margin: 0 0 10px 5px;
+            line-height: 1.1;
+        }
+
+        p {
+        margin: 1.5rem 0;
+        }
+        p, h1, h2, h3, h4, h5, h6 {
+            overflow-wrap: break-word;
         }
 
         header {
+            width: 100%;
+            min-height: 10vh;
+            background-color: var(--md-sys-color-secondary-container);
+            color: var(--md-sys-color-on-secondary-container);
 
+            nav {
+                padding: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                h1 {
+                    margin: 0;
+                    a {
+                        text-decoration: none;
+                        
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
         }
 
-        main {}
+        main {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+        }
 
-        footer {}
+        footer {
+            min-height: 10vh;
+            background-color: var(--md-sys-color-secondary-container);
+            color: var(--md-sys-color-on-secondary-container);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            p {
+                margin: 5px 0;
+            }
+        }
     }
 }
