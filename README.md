@@ -41,8 +41,8 @@ minefield/
    Requer Git.
 
    ```sh
-   git clone https://github.com/Andre-Su/minefield.git
-   cd minefield
+   git clone https://github.com/Andre-Su/minefield-web.git
+   cd minefield-web
    ```
 
 2. **Compile o SCSS (opcional, se for editar o tema):**
@@ -68,4 +68,4 @@ minefield/
 
 ---
 
-&copy; André Augusto, 2025 | Desenvolvido por [André Augusto](https://github.com/Andre-Su/)
+Desenvolvido por [André Augusto](https://github.com/Andre-Su/)
