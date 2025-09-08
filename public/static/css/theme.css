@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /* For local compilation: 
-sass -w ./scss/theme.scss ./root/static/css/theme.css
+sass -w ./scss/theme.scss ./public/static/css/theme.css
 */
 @font-face {
   font-family: "Ubuntu-Mono";
@@ -123,8 +123,6 @@ sass -w ./scss/theme.scss ./root/static/css/theme.css
 }
 
 html {
-  width: 100vw;
-  height: 100vh;
   background-color: var(--md-sys-color-background);
 }
 html body {
@@ -146,7 +144,7 @@ html body h1 {
   font-size: 3rem;
   margin-top: 3rem;
 }
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 768px) {
   html body h1 {
     font-size: 2.5rem;
   }
@@ -155,7 +153,7 @@ html body h2 {
   font-size: 2.6rem;
   margin-top: 3rem;
 }
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 768px) {
   html body h2 {
     font-size: 2.1rem;
   }
@@ -164,7 +162,7 @@ html body h3 {
   font-size: 2rem;
   margin-top: 3rem;
 }
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 768px) {
   html body h3 {
     font-size: 1.75rem;
   }
@@ -172,7 +170,7 @@ html body h3 {
 html body h4 {
   font-size: 1.44rem;
 }
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 768px) {
   html body h4 {
     font-size: 1.25rem;
   }
@@ -196,16 +194,27 @@ html body p, html body h1, html body h2, html body h3, html body h4, html body h
   overflow-wrap: break-word;
 }
 html body header {
-  width: 100%;
-  min-height: 10vh;
+  width: 100vw;
   background-color: var(--md-sys-color-secondary-container);
   color: var(--md-sys-color-on-secondary-container);
-}
-html body header nav {
-  padding: 8px;
   display: flex;
   align-items: center;
+  align-content: center;
   justify-content: space-between;
+}
+html body header nav {
+  padding: 0 16px;
+  min-height: 10vh;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+@media only screen and (max-width: 768px) {
+  html body header nav {
+    flex-direction: column;
+  }
 }
 html body header nav h1 {
   margin: 0;
@@ -215,6 +224,28 @@ html body header nav h1 a {
 }
 html body header nav h1 a:hover {
   text-decoration: underline;
+}
+html body header nav ul {
+  margin: 8px;
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  column-gap: 8px;
+  background-color: var(--md-sys-color-on-secondary);
+  color: var(--md-sys-color-secondary);
+}
+html body header nav ul li {
+  padding: 0 0 0 8px;
+  list-style: none;
+  border-left: 1px solid var(--md-sys-color-primary);
+}
+@media only screen and (max-width: 768px) {
+  html body header nav ul li {
+    border-left: none;
+  }
+}
+html body header nav ul li:first-child {
+  border-left: none;
 }
 html body main {
   min-height: 80vh;

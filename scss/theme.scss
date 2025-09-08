@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /* For local compilation: 
-sass -w ./scss/theme.scss ./root/static/css/theme.css
+sass -w ./scss/theme.scss ./public/static/css/theme.css
 */
 @use "variables";
 
@@ -30,8 +30,6 @@ sass -w ./scss/theme.scss ./root/static/css/theme.css
 }
 
 html {
-    width: 100vw;
-    height: 100vh;
     background-color: var(--md-sys-color-background);
     
     body {
@@ -52,7 +50,7 @@ html {
         h1 {
             font-size: 3rem;
             margin-top: 3rem;
-            @media only screen and (max-width: 720px) {
+            @media only screen and (max-width: 768px) {
                 font-size: 2.5rem;
             }
         }
@@ -60,7 +58,7 @@ html {
         h2 {
             font-size: 2.6rem;
             margin-top: 3rem;
-            @media only screen and (max-width: 720px) {
+            @media only screen and (max-width: 768px) {
                 font-size: 2.1rem;
             }
         }
@@ -68,14 +66,14 @@ html {
         h3 {
             font-size: 2rem;
             margin-top: 3rem;
-            @media only screen and (max-width: 720px) {
+            @media only screen and (max-width: 768px) {
                 font-size: 1.75rem;
             }
         }
         
         h4 {
             font-size: 1.44rem;
-            @media only screen and (max-width: 720px) {
+            @media only screen and (max-width: 768px) {
                 font-size: 1.25rem;
             }
         }
@@ -103,16 +101,26 @@ html {
         }
 
         header {
-            width: 100%;
-            min-height: 10vh;
+            width: 100vw;
             background-color: var(--md-sys-color-secondary-container);
             color: var(--md-sys-color-on-secondary-container);
-
+            display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: space-between;
+            
             nav {
-                padding: 8px;
+                padding: 0 16px;
+                min-height: 10vh;
                 display: flex;
                 align-items: center;
+                align-content: center;
                 justify-content: space-between;
+                flex-grow: 1;
+    
+            @media only screen and (max-width: 768px) {
+                flex-direction: column;
+            }
 
                 h1 {
                     margin: 0;
@@ -122,6 +130,28 @@ html {
                         &:hover {
                             text-decoration: underline;
                         }
+                    }
+                }
+                ul {
+                    margin: 8px;
+                    padding: 8px;
+                    display: flex;
+                    flex-direction: row;
+                    column-gap: 8px;
+                    background-color: var(--md-sys-color-on-secondary);
+                    color: var(--md-sys-color-secondary);
+
+                    li {
+                        padding: 0 0 0 8px;
+                        list-style: none;
+                        border-left: 1px solid var(--md-sys-color-primary);
+    
+                    @media only screen and (max-width: 768px) {
+                        border-left: none;
+                    }
+                    &:first-child {
+                        border-left: none;
+                    }
                     }
                 }
             }
