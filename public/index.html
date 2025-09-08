@@ -16,23 +16,21 @@
                     Campo Minado
                 </a>
             </h1>
-            <div><button>test</button></div>
+            <ul class="app-menu">
+                <li class="text-bar" id="message">Clique para iniciar</li>
+                <li>
+                    <div>
+                        <button id="start">Começar</button>
+                        <button hidden id="restart">Reiniciar</button>
+                    </div>
+                </li>
+            </ul>
         </nav>
     </header>
     <main>
         <section class="app-container">
             <div class="app-header">
-    
-                <ul class="app-menu">
-                    <li class="text-bar" id="message">Clique para iniciar</li>
-                    <div>
-                        <button id="start">Começar</button>
-                        <button hidden id="restart">Reiniciar</button>
-                    </div>
-                </ul>
-            </div>
-            <div id="game-grid">
-                <span class="tile" id="tile-0-0"></span>
+            <div id="game-board">
             </div>
         </section>
     </main>
