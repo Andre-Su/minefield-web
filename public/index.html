@@ -17,22 +17,34 @@
                 </a>
             </h1>
             <ul class="app-menu">
-                <li class="text-bar" id="message">Clique para iniciar</li>
-                <li>
-                    <div>
-                        <button id="start">Começar</button>
-                        <button hidden id="restart">Reiniciar</button>
-                    </div>
+                <li class="text-bar">
+                    <span>Minas: <span id="mine-count">10</span></span>
                 </li>
+                <li class="text-bar">
+                    <span>Tempo: <span id="timer">0</span>s</span>
+                </li>
+                <li><button id="restart-btn" onclick="initGame()">Reiniciar</button></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section class="app-container">
-            <div class="app-header">
-            <div id="game-board">
+        
+        <div class="game-container">
+            
+            <div class="game-controls">
+                
+                <div class="difficulty">
+                    <button onclick="changeDifficulty('easy')">Fácil</button>
+                    <button onclick="changeDifficulty('medium')">Médio</button>
+                    <button onclick="changeDifficulty('hard')">Difícil</button>
+                </div>
             </div>
-        </section>
+            
+            <div id="game-board" class="game-board"></div>
+            
+            <div id="message" class="message hidden"></div>
+
+        </div>
     </main>
     <footer>
         <p>
