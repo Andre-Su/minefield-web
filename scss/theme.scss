@@ -100,6 +100,14 @@ html {
             overflow-wrap: break-word;
         }
 
+        button {
+            background-color: var(--md-sys-color-primary-container);
+            color: var(--md-sys-color-on-primary-container);
+            padding: 5px 10px;
+            border: none;
+            border-radius: 8px;
+        }
+
         header {
             width: 100vw;
             background-color: var(--md-sys-color-secondary-container);
@@ -140,6 +148,7 @@ html {
                     column-gap: 8px;
                     background-color: var(--md-sys-color-on-secondary);
                     color: var(--md-sys-color-secondary);
+                    border-radius: 8px;
 
                     li {
                         padding: 0 0 0 8px;
@@ -161,6 +170,105 @@ html {
             min-height: 80vh;
             display: flex;
             flex-direction: column;
+
+            .game-container {
+                padding: 16px 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                width: 100%;
+                height: 100%;
+                gap: 8px;
+                
+                .game-board {
+                    background: var(--md-sys-color-primary-container);
+                    padding: .5rem;
+                    display: grid;
+                    align-items: center;
+                    gap: .5rem;
+                    max-width: 500px;
+                }
+
+                .cell {
+                    width: 35px;
+                    height: 35px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: bold;
+                    font-size: 16px;
+                    border: 2px solid #ccc;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: all 0.2s;
+                    background: var(--md-sys-color-primary);
+                }
+
+                .cell:hover {
+                    background: var(--md-sys-color-secondary);
+                    transform: scale(1.05);
+                }
+
+                .cell.revealed {
+                    background: var(--md-sys-color-on-primary);
+                    cursor: default;
+                }
+
+                .cell.flagged {
+                    background: linear-gradient(135deg, var(--md-sys-color-tertiary-container), var(--md-sys-color-on-tertiary));
+                }
+
+                .cell.mine {
+                    background: var(--md-sys-color-error-container);
+                    color: var(--md-sys-color-on-error-container);
+                }
+
+                /* Cores para os números */
+                .cell[data-value="1"] { color: #007bff; }
+                .cell[data-value="2"] { color: #28a745; }
+                .cell[data-value="3"] { color: #dc3545; }
+                .cell[data-value="4"] { color: #6f42c1; }
+                .cell[data-value="5"] { color: #fd7e14; }
+                .cell[data-value="6"] { color: #20c997; }
+                .cell[data-value="7"] { color: #000; }
+                .cell[data-value="8"] { color: #6c757d; }
+
+                .message {
+                    border-radius: 8px;
+                    padding: 0 8px;
+                    font-weight: bold;
+                    font-size: 1.2em;
+                }
+
+                .message.win {
+                    background: var(--md-sys-color-secondary-container);
+                    color: var(--md-sys-color-on-secondary-container);
+                }
+                
+                .message.lose {
+                    background: var(--md-sys-color-error-container);
+                    color: var(--md-sys-color-on-error-container);
+                }
+
+                /* Responsividade */
+                @media (max-width: 600px) {
+                    .game-container {
+                    }
+                    
+                    .cell {
+                        width: 30px;
+                        height: 30px;
+                        font-size: 14px;
+                    }
+                    
+                    .difficulty {
+                        flex-wrap: wrap;
+                    }
+                }
+            }
+
         }
 
         footer {
@@ -174,6 +282,11 @@ html {
             p {
                 margin: 5px 0;
             }
+        }
+
+
+        .hidden {
+            display: none;
         }
     }
 }
